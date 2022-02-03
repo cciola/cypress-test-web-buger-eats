@@ -906,7 +906,7 @@ No GitHub, crie um novo repositório.
 
 No Git, a branch principal é a `master`. O GitHub trabalha com a branch `main`como sendo a branch principal. É a mesma coisa, somente muda o rótulo. Execute o comando `git branch -M main` para criar a branch `main`.
 
- A branch é a nossa linha do tempo. Deste modo, temos agora duas linhas do tem: a `master`e a `main`.
+ A branch é a nossa linha do tempo. Deste modo, temos agora duas linhas do tem: a `master`e a `main`..
 
 Execute o comando abaixo, informando `git remote add origin https://github.com/cciola/cypress-test-web.git`, que fará um link do meu repositório local (meu computador) com o repositório na nuvem do GitHub.
 
