@@ -1,0 +1,50 @@
+{
+  "signup": {
+    "name": "Carol Ciola",
+    "cpf": "45918628363",
+    "email": "carol@email.com",
+    "whatsapp": "11922223333",
+    "address": {
+        "postalcode": "04534011",
+        "street": "Rua Joaquim Floriano",
+        "number": "1000",
+        "details": "Ap 142",
+        "district": "Itaim Bibi",
+        "city_state": "São Paulo/SP"
+    },
+    "delivery_method": "Moto",
+    "arqv": "nome-do-arquivo.jpg"
+  },
+  "cpf_inv": {
+    "name": "Ana Teste",
+    "cpf": "459186283XX",
+    "email": "ana@email.com",
+    "whatsapp": "11988885555",
+    "address": {
+        "postalcode": "09520070",
+        "street": "Rua Amazonas",
+        "number": "2000",
+        "details": "Ap 200",
+        "district": "Centro",
+        "city_state": "São Caetano do Sul/SP"
+    },
+    "delivery_method": "Moto",
+    "arqv": "nome-do-arquivo.jpg"
+  },
+  "email_inv": {
+    "name": "José Teste",
+    "cpf": "45918628363",
+    "email": "jose.com.br",
+    "whatsapp": "11966664444",
+    "address": {
+        "postalcode": "09520070",
+        "street": "Rua Amazonas",
+        "number": "3000",
+        "details": "Ap 300",
+        "district": "Centro",
+        "city_state": "São Caetano do Sul/SP"
+    },
+    "delivery_method": "Moto",
+    "arqv": "nome-do-arquivo.jpg"
+  }
+}

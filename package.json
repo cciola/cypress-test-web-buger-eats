@@ -1,0 +1,26 @@
+{
+  "name": "cypress-test-web",
+  "version": "1.0.0",
+  "description": "Projeto do curso Cypress Discovery, da QA Ninja.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/cciola/cypress-test-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cciola/cypress-test-web/issues"
+  },
+  "homepage": "https://github.com/cciola/cypress-test-web#readme",
+  "devDependencies": {
+    "cypress": "^9.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "faker": "^5.5.3",
+    "gerador-validador-cpf": "^5.0.2"
+  }
+}
