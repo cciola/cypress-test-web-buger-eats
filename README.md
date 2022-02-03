@@ -896,22 +896,40 @@ O comando `git add .` confirma e adiciona no projeto **todos** os arquivos lista
 
 O comando `git commit -m "mensagem do commit"` efetiva a alteração, e nele informamos um comentário sobre o commit.
 
-Caso o Git exiba a mensagem *Aythor identity unknown*, é necessário executar os comandos para criação do usuário e nome:
+Caso o Git exiba a mensagem *Author identity unknown*, é necessário executar os comandos para criação do usuário e nome:
 
 `git config --global user.email "you@example.com"`
+
 `git config --global user.name "Seu Nome"`
-
-O comando `git push` confirma a ação do commit.
-
-O comando `git pull` baixa a versão constante no repositório remoto para o repositório local.
 
 No GitHub, crie um novo repositório.
 
 No Git, a branch principal é a `master`. O GitHub trabalha com a branch `main`como sendo a branch principal. É a mesma coisa, somente muda o rótulo. Execute o comando `git branch -M main` para criar a branch `main`.
 
-git remote add origin https://github.com/cciola/cypress-test-web.git
-git push -u origin main
+ A branch é a nossa linha do tempo. Deste modo, temos agora duas linhas do tem: a `master`e a `main`.
 
+Execute o comando abaixo, informando `git remote add origin https://github.com/cciola/cypress-test-web.git`, que fará um link do meu repositório local (meu computador) com o repositório na nuvem do GitHub.
+
+Vamos executar o comando `git push -u origin main`, o qual confirma a ação do commit e publica nosso projeto local para o GitHub.
+
+### Personal Access Token (PAT)
+É necessário criar um token de acesso pessoal para efetuar alterações no projeto. No GitHub, Acesse o perfil > Settings > Developer settings > Persolan access tokens e gere um novo token.
+
+Copie o token gerado, acesse no projeti a pasta .git, abra o arquivo config e altere a linha abaixo:
+
+de
+```
+[remote "origin"]
+	url = https://github.com/cciola/cypress-test-web.git`
+```
+
+para
+```
+[remote "origin"]
+	url = https://<cole o token aqui>@github.com/cciola/cypress-test-web.git`
+```
+
+O comando `git pull` baixa a versão constante no repositório remoto para o repositório local.
 
 ## Masterclasses complementares
 Links das masterclasses complementares do curso:
