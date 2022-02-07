@@ -942,6 +942,93 @@ Além do ProjectID, nos é fornecida uma *record key*. Ela nos permite gravar to
 
 Copie a *record key* e cole em um novo arquivo *temp.txt* no projeto.
 
+## GitHub Actions
+O GitHub Actions substitui o uso do Jenkins ou outras ferramentas similares de CI. Ele possui um workflow, jobs e runners.
+
+A maioria das pessoas utiliza o GitHub apenas como um repositório de código-fonte e quando precisava fazer algum processo de build ou deploy acabava integrando com outras plataformas, como por exemplo o Azure DevOps Services, Jenkins etc.
+
+Agora isso já não é mais necessário, podemos fazer tudo isso dentro do próprio GitHub utilizando a feature de “Actions”, facilitando muito o processo de automatização de builds e deploys dos nossos sistemas, pois tudo estará no mesmo repositório.
+
+O GitHub Actions nada mais é do que um orquestrador de workflow. Através dele nós podemos construir um workflow com várias ações que vão descrever os passos necessários para compilar, testar, empacotar, criar releases e até fazer deploy do nosso sistema. O GitHub Actions nos permite implementar as técnicas de CI e CD de forma simples dentro do nosso repositório, não precisando mais fazer integrações com outros sistemas.
+
+Outra grande vantagem dessa funcionalidade é a possibilidade de utilizar agentes próprios do GitHub, não havendo necessidade de criação de ambientes específicos para conseguirmos executar nossos workflows de CI e CD. Isso agiliza ainda mais o processo de configuração e execução dos nossos workflows e diminui o custo de implantação, pois já temos uma infraestrutura pronta para utilizarmos.
+
+### Componentes do GitHub Actions
+
+- **Workflow**: É onde vamos descrever todo o processo de automação para podermos compilar, testar e fazer deploy do nosso sistema.
+
+- **Actions**: São tarefas que vamos utilizar dentro do workflow. Aqui que vamos definir o que realmente nosso workflow vai fazer.
+
+- **Runners**: É a máquina responsável por executar o workflow e as actions e nos prover o feedback do nosso processo. O Runner pode ser o GitHub-hosted, provido pelo próprio time ou self-hosted runner, onde você é responsável por gerenciar o servidor e os serviços instalados nele.
+
+Para repositórios públicos é de graça e para repositórios privados, cada conta recebe alguns minutos de graça, conforme tabela abaixo:
+
+GitHub Free 500 MB com 2.000 minutos por mês
+GitHub Pro 1GB com 3.000 minutos por mês
+GitHub Free for organizations 500 MB com 2.000 minutos por mês
+GitHub Team 2 GB com 3.000 minutos por mês
+GitHub Enterprise Cloud 50GB com 5.000 minutos por mês
+
+Acima disso, você terá que configurar o billing para poder utilizar mais espaço e mais tempo de execução de build ou deploy.
+
+
+### Configuração
+No GitHub > aba *Actions*, é identificado o tipo de código do repositório, e apresenta algumas sugestões de templates para trabalharmos. No nosso caso, vamos criar um template do zero.
+
+Clique no link *set up a workflow yourself*.
+
+Altere o nome do arquivo *main.yml* sugerido para *workflow-cypress.yml*.
+
+Limpe o conteúdo sugerido, e pesquise pelo plugin "Cypress.io". Nele temos todas as informações para elaborar a orquestração do workflow.
+
+O Papito gerou um template baseado nesta documentação, baixe no curso e cole na página de Actions. Teremos neste arquivo:
+
+```javascript
+//nome do workflow
+name: Cypress Regression Tests
+//quando o workflow será executado (neste caso, sempre que fizermos um `push` no repo do projeto)
+on: [push]
+
+//definição dos jobs (neste caso temos este único job)
+jobs:
+
+  ui-chrome-tests:
+  //qual é o sistema operaional que vai executar este workflow. Quando este workflow for disparado, o GitHub Actions vai construir uma pequena máquina virtual bem enxuta (container), o qual terá o Ubuntu instalado.
+    runs-on: ubuntu-latest
+    //este container terá o template onde o Ubuntu será montado com todo o ambiente para executar testes com o Cypress (dependências e navegador Chrome)
+    container: cypress/browsers:node14.17.0-chrome88-ff89
+    //caso a execução do Cypress encontre um bug, faz com que a execução não seja abortada. Colocamos false pois o bug pode ser esperado de fato em algum teste
+    strategy:
+      fail-fast: false
+    steps:
+      //este step contém uma cópia do código-fonte Cypress que está no repo, e a coloca dentro do container (runner)
+      - name: Checkout
+        uses: actions/checkout@v2
+      //este step faz a execução dos testes automatizados, neste caso, no Chrome
+      - name: 'UI Tests - Chrome'
+        //nome do plugin oficial para testar com Cypress dentro do GitHub Actions
+        uses: cypress-io/github-action@v2
+        with:
+          //este comando instala as dependências necessárias do nosso projeto
+          install-command: yarn install
+          //recurso para aguardar um timeout de até 120s para saber se a URL está online, antes de iniciar os testes
+          wait-on: ${{ secrets.BASE_URL }}
+          wait-on-timeout: 120
+          //[...]
+```
+Vamos gerar um *secret* para nosso projeto:
+
+```javascript
+          //[...]
+          browser: chrome
+          record: true
+          group: 'UI - Chrome'
+          spec: cypress/integration/*
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ## Masterclasses complementares
 Links das masterclasses complementares do curso:
 
