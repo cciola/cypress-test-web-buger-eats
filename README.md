@@ -1016,18 +1016,45 @@ jobs:
           wait-on-timeout: 120
           //[...]
 ```
-Vamos gerar um *secret* para nosso projeto:
+Vamos gerar uma chave secreta para nosso projeto, contendo nossa URL que será verificada: no GitHub, acesse a aba "Settings", opção Secrets > Actions, botão New repository secret. Informe:
 
+Name: `BASE_URL`
+Value: `https://buger-eats-qa.vercel.app`
+
+Continuando:
 ```javascript
           //[...]
+          //qual navegador o teste será executado
           browser: chrome
+          //grava o resultado
           record: true
+          //agrupa toda a execução de teste que for feita por este plugin
           group: 'UI - Chrome'
-          spec: cypress/integration/*
+          //onde estão as specs de teste
+          spec: cypress/integration//*
+          //[...]
+```
+
+Vamos gerar mais uma *secret*, para a configuração `env` mais abaixo:
+
+Name: `CYPRESS_RECORD_KEY`
+Value: `(adicionar somente a numeração da chave constante no arquivo temp.txt)`
+
+O `GITHUB_TOKEN` é identificado automaticamente por meio da conta do GitHub.
+
+```javascript
+        //[...]
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+Clique em *Start commit*, e em seguinda, *Commit new file*.
+
+Clique novamente na aba Actions, e clique no comentário do workflow > ui-chrome-tests. Podemos vê-lo executando em tempo real.
+
+Acessando o Cypress Dashboard, atualize a página Latest runs e visualize os resultados da execução dos testes.
+
 
 ## Masterclasses complementares
 Links das masterclasses complementares do curso:
