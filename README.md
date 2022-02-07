@@ -906,7 +906,7 @@ No GitHub, crie um novo repositório.
 
 No Git, a branch principal é a `master`. O GitHub trabalha com a branch `main`como sendo a branch principal. É a mesma coisa, somente muda o rótulo. Execute o comando `git branch -M main` para criar a branch `main`.
 
- A branch é a nossa linha do tempo. Deste modo, temos agora duas linhas do tem: a `master`e a `main`..
+ A branch é a nossa linha do tempo. Deste modo, temos agora duas linhas do tem: a `master`e a `main`.
 
 Execute o comando abaixo, informando `git remote add origin https://github.com/cciola/cypress-test-web.git`, que fará um link do meu repositório local (meu computador) com o repositório na nuvem do GitHub.
 
@@ -930,6 +930,17 @@ para
 ```
 
 O comando `git pull` baixa a versão constante no repositório remoto para o repositório local.
+
+## Cypress Dashboard
+Acesse o site cypress.io e crie uma conta, vinculando a conta do GitHub à conta do Cypress.Prossiga com os passos.
+
+Após logar, acesse o menu Projects, crie um novo projeto, indicando como CI Provider o GitHub Actions.
+
+O submenu Latest Runs fornecerá o *ProjectID* para vincular nosso código com o Cypress Dashboard. Copie apenas a linha do identificador (sem as chaves), e informe no arquivo *cypress.json*.
+
+Além do ProjectID, nos é fornecida uma *record key*. Ela nos permite gravar todo o resultado do teste executado.
+
+Copie a *record key* e cole em um novo arquivo *temp.txt* no projeto.
 
 ## Masterclasses complementares
 Links das masterclasses complementares do curso:
