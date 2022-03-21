@@ -83,6 +83,28 @@ npx cypress run
 - **package-lock.json:** gerado automaticamente com as instalações e atualizações de pacotes
 
 ---
+## Introdução
+O Cypress.io é um framework de testes automatizados com linguagem Javascript, O conceito utilizado é baixa configuração, ou seja, após instalar e inicializar, já está pronto para codificar a automação.
+
+O diferencial do Cypress é que ele faz tudo o que os demais frameworks do mercado fazem, porém sem o Selenium. Não é necessário realizar todo o processo de configuração conhecido de outros frameworks, como o Selenium Webdriver.
+
+O Cypress permite a escrita, execução e grtavação de testes, tudo em uma única interface simples e amigável.
+
+O Cypress é executado no servidor NodeJS, e este se comunica ao executar o teste (no navegador) orquestrado pelo Cypress, para executar a aplicação e o script do teste no mesmo loop de eventos. Isso permite que o Cypress simule e até mesmo altere o objeto Javascript. Esta é uma das principais razões pela qual se espera que os tesates com Cypress sejam executados mais rapidamente do que os testes utilizando Selenium. É possível utilizar o Cypress inclusive para acessarum sistema operacional para realizar processos de automação.
+
+Suporta os seguintes navegadores: Canary, Chrome, Electron (padrão), Chromium, Mozilla Firefox (suporte beta) e Microsoft Edge (baseado em Chromium).
+
+Alguns pontos positivos em se utilizar Cypress:
+- Fácil de configurar
+- Recurso interno automático apra espera de solicitações, que elimina a necessidade de configurar esperas adicionais
+- Não há necessidade de usar binários, como Chromedriver, Geckodriver, etc.
+- É possível alterar o código e executá-lo em tempo real
+- Fornece relatórios detalhados
+- Possui suporte para executar testes em paralelo
+- Realiza captura de telas a casa etapa do teste
+- Possui uma documentação detalhada
+- Possibilita utilizar IDEs como VS Code, Sublime, Intellij, Atom
+- Possibilita configurar para gravar os testes em vídeo
 
 ## Iniciando um novo projeto
 
