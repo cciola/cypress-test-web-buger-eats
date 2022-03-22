@@ -468,7 +468,7 @@ A declaração ficará da seguinte forma:
 })
 ```
 
-## vieport e baseUrl
+## viewport e baseUrl
 
 ### viewport
 Execute um script de teste. No canto superior direito da janela do Cypress, temos o ícone "i". Ao clicar nele, temos uma descrição da configuração padrão de `viewport` do Cypress, que é de 100 x 660px.
