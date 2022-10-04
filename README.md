@@ -16,7 +16,12 @@ Este script efetua alguns testes na aplicação [Buger Eats](https://buger-eats-
   - [Cypress](https://www.npmjs.com/package/cypress/ "Cypress")
   - [Git for Windows](https://gitforwindows.org/)
   - [cmder](https://cmder.net/): optar pela instalação full
-  - [VS Code](https://code.visualstudio.com/ "VS Code"): após a instalação, vamos utilizar a  extensão *Material Icon Theme*, do Philipp Kief
+  - [VS Code](https://code.visualstudio.com/ "VS Code"): após a instalação, vamos utilizar a extensão *Material Icon Theme*, do Philipp Kief
+  - caso utilize BDD, instale também as extensões: 
+    - BDD Highlighter
+    - Cucumber (Gherkin) Full Support
+    - Snippets and Syntax Highlight for Gherkin (Cucumber)
+    - Feature Syntax Highlight and Snippets (Cucumber/Gherkin)
 
 - Abra um terminal que aceite comandos git (exemplo: Powershell, git bash, cmder, etc.)
 - Baixe este repositório ou faça um git clone (HTTPS/SSH)
