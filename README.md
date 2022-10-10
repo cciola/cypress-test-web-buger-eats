@@ -41,7 +41,7 @@ npm test
 
 - Para executar todos os testes em modo headless, digite no terminal:
 ```
-test:headless
+npm test:headless
 ```
 
 -----------------------------------------
