@@ -120,7 +120,7 @@ Alguns pontos positivos em se utilizar Cypress:
 - Altere a linha `test` no arquivo *package.json*, para que fique da seguinte forma:
 ```javascript
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
     "test:headless": "cypress run"
   },
 ```
