@@ -36,12 +36,12 @@ npm -v && node -v
 
 - Para abrir a interface gráfica do Cypress e escolher quais testes deseja executar, digite no terminal:
 ```
-npx cypress open
+npm test
 ```
 
 - Para executar todos os testes em modo headless, digite no terminal:
 ```
-npx cypress run
+test:headless
 ```
 
 -----------------------------------------
@@ -120,7 +120,8 @@ Alguns pontos positivos em se utilizar Cypress:
 - Altere a linha `test` no arquivo *package.json*, para que fique da seguinte forma:
 ```javascript
   "scripts": {
-    "test": "npx cypress open"
+    "test": "cypress open"
+    "test:headless": "cypress run"
   },
 ```
 - Digite o comando `npm run test` para inicializar o painel do Cypress pela primeira vez, e criar a estrutura do Cypress no nosso projeto.
@@ -885,7 +886,7 @@ context('Required fields', function() {
 Ao executarmos o teste desta forma, o teste vai falhar, porém o script continuará a execução dos demais testes. Isso fará com que o teste fique dinâmico, não abortando a execução do script todo se um dos asserts falhar.
 
 ## Cypress Run com evidências em vídeos
-O comando `npx cypress run` executa todos os testes em modo headless. Com isso, é criada automaticamente a pasta *videos*, contendo arquivos de vídeo para cada um dos testes executados.
+O comando `cypress run` executa todos os testes em modo headless. Com isso, é criada automaticamente a pasta *videos*, contendo arquivos de vídeo para cada um dos testes executados.
 
 ## Screenshots quando um teste falha
 Ao executar os testes em modo headless, o Cypress sempre captura automaticamente um screenshot quando encontra uma falha na execução e gera a pasta *screenshots*.
@@ -899,9 +900,9 @@ Os desenvolvedores do Cypress optaram por ter o Electron como navegador padrão 
 
 Se quiser excolher um navegador específico, basta informar por parâmetro no momento da execução:
 
-- `npx cypress run -b chrome`
-- `npx cypress run -b firefox`
-- `npx cypress run -b edge`
+- `cypress run -b chrome`
+- `cypress run -b firefox`
+- `cypress run -b edge`
 
 Lembrando que você deve possuir a **versão mais atual do Edge** para conseguir executar o Cypress, ele não funciona nas versões mais antigas.
 
