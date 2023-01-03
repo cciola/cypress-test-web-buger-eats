@@ -138,6 +138,7 @@ describe ('Home page', () => {
 	})
 })
 ```
+Para mais configurações do *viewport*, acesse: https://medium.com/@anshita.bhasin/how-to-automate-the-mobile-web-view-of-an-application-in-cypress-92d3f3e8eccd
 
 ## Não use o Selector Playground
 O *selector playground* do Cypress facilita bastante na busca pelos elementos, mas muitas vezes o caminho apresentado por ele não é uma das melhores formas de busca. O ideal é analisar a estrutura HTML da página para elaborar manualmente uma busca pelo 'pai' ou 'avô' do elemento, fazendo com que fique mais assertivo.
