@@ -577,7 +577,7 @@ export default new SignupPage;
 import signup from '../pages/SignupPage'
 ```
 
-## Trbalhando com Fixtures
+## Trabalhando com Fixtures
 Vamos remodelar a massa de teste dos nossos dois cenários. Como temos uma massa de teste com muitos campos, vamos passar a armazená-la na pasta *fixtures*: renomeie o arquivo *example.json* para *deliver.json*, e substitua o conteúdo pela massa de teste, alterando para o formato json. E ainda neste contexto, vamos separar a massa de teste por cenários: `signup` e `cpf_inv`:
 ```json
 {
