@@ -1,4 +1,4 @@
-## cypress-test-web-discovery
+## cypress-test-web-buger-eats
 Projeto do curso de automação de testes web "Cypress Discovery", da QA Ninja.
 
 -----------------------------------------
