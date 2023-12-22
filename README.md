@@ -1,5 +1,5 @@
-## Automação de testes web com Cypress
-Projeto do curso Cypress Discovery, da QA Ninja.
+## cypress-test-web-buger-eats
+Projeto do curso de automação de testes web "Cypress Discovery", da QA Ninja.
 
 -----------------------------------------
 ### O que este script faz?
